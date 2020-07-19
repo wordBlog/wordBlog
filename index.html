@@ -9,11 +9,25 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    <div class="formatter">
-        <button class="bold">B</button>
-        <button class="italic">I</button>
+    <div class="platform">
+        <div class="wrapper">
+            <div class="formatter">
+                <button class="bold">B</button>
+                <button class="italic">I</button>
+            </div>
+            <p class="label">Template</p>
+            <div class="template-box">
+                <textarea class="template" type="text"></textarea>
+                <div class="reset"><button>Change</button></div>
+            </div>
+            <p class="label">Text Editor</p>
+            <div class="text-editor" name="textEditor" frameborder="0" contenteditable="true"></div>
+            <p class="label">HTML</p>
+            <textarea class="html" readonly='true' type="text"></textarea>
+        </div>
+        <div class="frame">
+            <iframe class="web"></iframe>
+        </div>
     </div>
-    <div class="text-editor" name="textEditor" frameborder="0" contenteditable="true"></div>
-    <div><code class="html"></code></div>
 </body>
 </html>
