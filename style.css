@@ -1,42 +1,94 @@
-.platform{
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #000;
+}
+nav .navigation{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav .title{
+    margin-left:1em;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+    height:80px;
+    margin: 0;
+}
+nav .title svg{
+    width:80px;
+    height: 80px;
+    margin-right: 0.3em;
+}
+nav .tagline{
+    color:white;
+    font-size: 1.5em;
+}
+.platform {
     display: flex;
     flex-grow: 1;
     justify-content: space-evenly;
+    padding: 1em;
 }
-.wrapper{
+.wrapper {
     display: inline-flex;
     flex-direction: column;
     width: min-content;
 }
-.text-editor,.html,.template{
-    width:400px;
-    height: 190px;
-    outline:none;
+.text-editor,
+.html,
+.template {
+    width: 400px;
+    outline: none;
     box-sizing: border-box;
     border: 1px solid #00000030;
     overflow: scroll;
     display: block;
+    background-color: #fff;
 }
-.formatter{
-    margin: auto;
+.wrapper {
+    box-shadow: 0 0 10px 1px black;
 }
-.label{
+.text-editor {
+    height: 400px;
+}
+.formatter {
+    padding: 10px;
+}
+.formatter span {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid black;
+}
+.label {
     margin: 0;
     display: inline;
+    font-size: 1.3em;
+    background-color: teal;
+    color: white;
+    z-index: 2;
+    text-align: center;
 }
-.frame{
-    width:100%;
+.frame {
+    width: 100%;
 }
-.frame iframe{
+.frame iframe {
     display: block;
     margin: auto;
-    width:90%;
+    width: 90%;
     height: 100%;
+    border: 10px solid rgb(141, 172, 172);
+    box-sizing: border-box;
 }
-.template-box{
+.template-box {
     position: relative;
 }
-.reset{
+.reset {
     position: absolute;
     top: 0;
     right: 0;
@@ -47,8 +99,7 @@
     align-items: center;
     justify-content: center;
 }
-.reset button{
-    padding:1em;
+.reset button {
     background-color: rgb(62, 241, 131);
     border: none;
     color: white;
@@ -57,6 +108,9 @@
     outline: none;
     cursor: pointer;
 }
-.reset button:hover{
+.reset button:hover {
     background-color: rgb(247, 6, 6);
+}
+.web {
+    background-color: #fff;
 }

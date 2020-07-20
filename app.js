@@ -5,9 +5,10 @@ var template = document.querySelector('.template');
 var reset = document.querySelector('.reset');
 var resetBtn = document.querySelector('.reset button');
 var webCon = document.querySelector('.frame');
-document.execCommand("defaultParagraphSeparator", false, "p");
-editor.addEventListener("input", function () {
-    var hey = editor.innerHTML.toString();
+editor.contentWindow.document.designMode = 'on';
+editor.contentWindow.document.execCommand("defaultParagraphSeparator", false, "p");
+editor.contentDocument.body.addEventListener("input", function () {
+    var hey = editor.contentDocument.body.innerHTML.toString();
     hey = hey.split("");
     let hen = hey.indexOf("</");
     if (hen < 0) {
@@ -21,8 +22,8 @@ editor.addEventListener("input", function () {
         hey = temp + hey;
     }
     let main = web.contentDocument.getElementsByTagName("MAIN")[0];
-    main.innerHTML = editor.innerHTML;
     html.value = hey;
+    main.innerHTML = editor.contentDocument.body.innerHTML;
 });
 template.addEventListener('input',function(){
     let templated = template.value.split(`<?.?.?.wordBLOG.?.?.?>`)
@@ -42,3 +43,7 @@ resetBtn.addEventListener('click',function(){
     console.log(reset)
     web = newtemplate;
 })
+function formatTo(command){
+    console.log(editor.contentWindow.document)
+    editor.contentWindow.document.execCommand(command,false,null)
+}
