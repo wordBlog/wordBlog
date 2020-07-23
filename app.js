@@ -22,6 +22,7 @@ editor.contentDocument.body.addEventListener("input", function () {
         hey = temp + hey;
     }
     let main = web.contentDocument.getElementsByTagName("MAIN")[0];
+    console.log(main)
     html.value = hey;
     main.innerHTML = editor.contentDocument.body.innerHTML;
 });
